@@ -16,7 +16,7 @@ public class Mago extends Personajes {
 
     @Override
     public int defender() {
-        
+
         return this.potenciaMagica / 2;
     }
 
@@ -27,7 +27,5 @@ public class Mago extends Personajes {
     public void setPotenciaMagica(int potenciaMagica) {
         this.potenciaMagica = potenciaMagica;
     }
-    
-    
-    
+
 }
