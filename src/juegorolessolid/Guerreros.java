@@ -13,7 +13,7 @@ public class Guerreros extends Personajes {
         this.fuerzaFisica = fuerzaFisica;
         this.armadura = armadura;
     }
-   
+
     public int getFuerzaFisica() {
         return fuerzaFisica;
     }
