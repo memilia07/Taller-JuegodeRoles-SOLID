@@ -7,23 +7,22 @@ public abstract class Personajes {
 
     protected String nombre;
     protected int vida, ataque;
-
-    // Atributos de equipo
+    protected List<Objeto> inventario = new ArrayList<>();
     protected Arma armaEquipada;
     protected Armadura armaduraEquipada;
-
+ 
     public Personajes(String nombre, int vida, int ataque) {
         this.nombre = nombre;
         this.vida = vida;
         this.ataque = ataque;
     }
 
-    public void equiparArma(Arma arma) {
-        this.armaEquipada = arma;
+    public void equiparArma(Arma a) {
+        this.armaEquipada = a;
     }
 
-    public void equiparArmadura(Armadura armadura) {
-        this.armaduraEquipada = armadura;
+    public void equiparArmadura(Armadura a) {
+        this.armaduraEquipada = a;
     }
 
     public int getBonusAtaqueEquipado() {
@@ -37,6 +36,7 @@ public abstract class Personajes {
     public abstract int atacar();
 
     public abstract int defender();
+    
 
     public void recibirDanio(int danio) {
         this.vida -= danio;
@@ -49,4 +49,42 @@ public abstract class Personajes {
     public int getVida() {
         return vida;
     }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public int getAtaque() {
+        return ataque;
+    }
+
+    public void setAtaque(int ataque) {
+        this.ataque = ataque;
+    }
+
+    public List<Objeto> getInventario() {
+        return inventario;
+    }
+
+    public void setInventario(List<Objeto> inventario) {
+        this.inventario = inventario;
+    }
+
+    public Arma getArmaEquipada() {
+        return armaEquipada;
+    }
+
+    public void setArmaEquipada(Arma armaEquipada) {
+        this.armaEquipada = armaEquipada;
+    }
+
+    public Armadura getArmaduraEquipada() {
+        return armaduraEquipada;
+    }
+
+    public void setArmaduraEquipada(Armadura armaduraEquipada) {
+        this.armaduraEquipada = armaduraEquipada;
+    }
+    
+
 }
