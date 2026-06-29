@@ -1,13 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package juegorolessolid;
 
-/**
- *
- * @author Lenovo
- */
-public class Envenenado {
-    
+public class Envenenado extends EstadoAlterado {
+
+    private int dano;
+
+    public Envenenado(int duracion, int dano) {
+        super(duracion);
+        this.dano = dano;
+    }
+
+    @Override
+    public void aplicar(Personajes personaje) {
+        personaje.recibirDanio(dano);
+        System.out.println(personaje.getNombre() + " recibe " + dano + " de daño por veneno.");
+    }
+
+    @Override
+    public String getNombre() {
+        return "Envenenado";
+    }
+
 }

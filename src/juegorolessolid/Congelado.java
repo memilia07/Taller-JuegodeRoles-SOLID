@@ -1,13 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package juegorolessolid;
 
-/**
- *
- * @author Lenovo
- */
-public class Congelado {
-    
+public class Congelado extends EstadoAlterado {
+
+    public Congelado(int duracion) {
+        super(duracion);
+    }
+
+    @Override
+    public void aplicar(Personajes personaje) {
+        System.out.println(personaje.getNombre() + " está congelado.");
+    }
+
+    @Override
+    public boolean puedeAtacar() {
+        return false;
+    }
+
+    @Override
+    public String getNombre() {
+        return "Congelado";
+    }
 }
