@@ -8,11 +8,11 @@ public class Guerreros extends Personajes {
 
     private int fuerzaFisica, armadura;
 
-    public Guerreros(String nombre, int vida, int ataque, int fuerzaFisica, int armadura) {
-        super(nombre, vida, ataque);
-        this.fuerzaFisica = fuerzaFisica;
-        this.armadura = armadura;
-    }
+ public Guerreros(String nombre, int vida, int ataque, int fuerzaFisica, int armadura) {
+    super(nombre, vida, ataque, 100); 
+    this.fuerzaFisica = fuerzaFisica;
+    this.armadura = armadura;
+}
 
     public int getFuerzaFisica() {
         return fuerzaFisica;

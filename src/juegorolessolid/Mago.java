@@ -5,10 +5,10 @@ public class Mago extends Personajes {
     private int potenciaMagica;
 
     public Mago(String nombre, int vida, int ataque, int potenciaMagica) {
-        super(nombre, vida, ataque);
-        this.potenciaMagica = potenciaMagica;
-    }
-
+    super(nombre, vida, ataque, 120); 
+    this.potenciaMagica = potenciaMagica;
+}
+    
     public int getPotenciaMagica() {
         return potenciaMagica;
     }

@@ -8,6 +8,10 @@ package juegorolessolid;
  *
  * @author Sexxxrvio
  */
-public class EnergiaInsuficienteException {
-    
+public class EnergiaInsuficienteException extends Exception {
+
+    public EnergiaInsuficienteException(String nombrePersonaje, int energiaActual, int energiaNecesaria) {
+        super(nombrePersonaje + " no tiene suficiente energía. "
+                + "Tiene: " + energiaActual + ", necesita: " + energiaNecesaria);
+    }
 }

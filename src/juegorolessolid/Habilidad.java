@@ -9,5 +9,16 @@ package juegorolessolid;
  * @author Sexxxrvio
  */
 public interface Habilidad {
-    
+
+    String getNombre();
+
+    int getCostoEnergia();
+
+    int getCooldownMaximo();
+
+    void ejecutar(Personajes lanzador, Personajes objetivo) throws EnergiaInsuficienteException;
+
+    void reducirCooldown();
+
+    boolean estaDisponible();
 }
