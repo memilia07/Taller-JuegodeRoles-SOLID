@@ -5,26 +5,13 @@
 package juegorolessolid;
 
 public class Arqueros extends Personajes {
+
     private int cantidadFlechas, precision;
 
     public Arqueros(String nombre, int vida, int ataque, int cantidadFlechas, int precision) {
         super(nombre, vida, ataque);
         this.cantidadFlechas = cantidadFlechas;
         this.precision = precision;
-    }
-
-    @Override
-    public int atacar() {
-        if (cantidadFlechas > 0) {
-            cantidadFlechas--;
-            return this.ataque + this.precision;
-        }
-        return this.ataque;
-    }
-
-    @Override
-    public int defender() {
-        return 5; 
     }
 
     public int getCantidadFlechas() {
@@ -42,5 +29,19 @@ public class Arqueros extends Personajes {
     public void setPrecision(int precision) {
         this.precision = precision;
     }
-    
+
+    @Override
+    public int atacar() {
+        if (cantidadFlechas > 0) {
+            cantidadFlechas--;
+            return this.ataque + this.precision + getBonusAtaqueEquipado();
+        }
+        return this.ataque + getBonusAtaqueEquipado();
+    }
+
+    @Override
+    public int defender() {
+        return 5 + getBonusDefensaEquipado();
+    }
+
 }

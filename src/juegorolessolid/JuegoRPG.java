@@ -38,22 +38,23 @@ public class JuegoRPG {
     }
 
     public static void iniciarBatalla(Personajes p1, Personajes p2) {
-        System.out.println("¡Combate entre " + p1.nombre + " y " + p2.nombre + "!");
+        // Equipamiento inicial (puedes cambiar esto según la lógica que necesites)
+        p1.equiparArma(new Arma("Espada de Acero", 10));
+        p1.equiparArmadura(new Armadura("Escudo de Madera", 5));
+        p2.equiparArma(new Arma("Daga Básica", 5));
+
+        System.out.println("¡Combate entre " + p1.getNombre() + " y " + p2.getNombre() + "!");
 
         int turnos = 0;
-        while (p1.vida > 0 && p2.vida > 0 && turnos < 10) {
-            System.out.println("\n--- Turno " + (turnos + 1) + " ---");
+        while (p1.getVida() > 0 && p2.getVida() > 0 && turnos < 10) {
 
             int danio1 = Math.max(0, p1.atacar() - p2.defender());
-            p2.vida -= danio1;
-            System.out.println(p1.nombre + " causa " + danio1 + " de daño a " + p2.nombre);
+            p2.recibirDanio(danio1);
 
-            if (p1.vida > 0) {
-                int danio2 = Math.max(0, p2.atacar() - p1.defender());
-                p1.vida -= danio2;
-                System.out.println(p2.nombre + " causa " + danio2 + " de daño a " + p1.nombre);
-            }
+            System.out.println(p1.getNombre() + " causa " + danio1 + " de daño a " + p2.getNombre());
+
             turnos++;
+
         }
 
         System.out.println("\n--- RESULTADO FINAL ---");
