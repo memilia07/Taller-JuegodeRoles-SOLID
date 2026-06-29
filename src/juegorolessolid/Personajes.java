@@ -7,7 +7,8 @@ public abstract class Personajes {
 
     protected String nombre;
     protected int vida, ataque;
-    protected List<Objeto> inventario = new ArrayList<>();
+
+    // Atributos de equipo
     protected Arma armaEquipada;
     protected Armadura armaduraEquipada;
 
@@ -17,12 +18,12 @@ public abstract class Personajes {
         this.ataque = ataque;
     }
 
-    public void equiparArma(Arma a) {
-        this.armaEquipada = a;
+    public void equiparArma(Arma arma) {
+        this.armaEquipada = arma;
     }
 
-    public void equiparArmadura(Armadura a) {
-        this.armaduraEquipada = a;
+    public void equiparArmadura(Armadura armadura) {
+        this.armaduraEquipada = armadura;
     }
 
     public int getBonusAtaqueEquipado() {
@@ -45,4 +46,7 @@ public abstract class Personajes {
         return nombre;
     }
 
+    public int getVida() {
+        return vida;
+    }
 }
