@@ -26,9 +26,9 @@ public class JuegoRPG {
 
         return switch (opcion) {
             case 1 ->
-                new Guerreros(nombre, 100, 20, 15, 10);
+                new Guerreros(nombre, 95, 20, 15, 10);
             case 2 ->
-                new Mago(nombre, 80, 15, 40);
+                new Mago(nombre, 85, 17, 40);
             case 3 ->
                 new Arqueros(nombre, 90, 12, 10, 20);
             default ->
@@ -56,8 +56,13 @@ public class JuegoRPG {
 
             int danio1 = Math.max(0, p1.atacar() - p2.defender());
             p2.recibirDanio(danio1);
-
             System.out.println(p1.getNombre() + " causa " + danio1 + " de daño a " + p2.getNombre());
+
+            if (p2.getVida() > 0) {
+                int danio2 = Math.max(0, p2.atacar() - p1.defender());
+                p1.recibirDanio(danio2);
+                System.out.println(p2.getNombre() + " causa " + danio2 + " de daño a " + p1.getNombre());
+            }
 
             turnos++;
 
