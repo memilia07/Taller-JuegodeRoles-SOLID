@@ -38,10 +38,16 @@ public class JuegoRPG {
     }
 
     public static void iniciarBatalla(Personajes p1, Personajes p2) {
-        // Equipamiento inicial (puedes cambiar esto según la lógica que necesites)
-        p1.equiparArma(new Arma("Espada de Acero", 10));
-        p1.equiparArmadura(new Armadura("Escudo de Madera", 5));
-        p2.equiparArma(new Arma("Daga Básica", 5));
+        Arma espadaAcero = new Arma("Espada de Acero", 10);
+        Armadura escudoMadera = new Armadura("Escudo de Madera", 5);
+        Arma dagaBasica = new Arma("Daga Básica", 5);
+
+        p1.agregarInventario(espadaAcero);
+        p1.agregarInventario(escudoMadera);
+        p1.equipar(espadaAcero);
+
+        p2.agregarInventario(dagaBasica);
+        p2.equipar(dagaBasica);
 
         System.out.println("¡Combate entre " + p1.getNombre() + " y " + p2.getNombre() + "!");
 

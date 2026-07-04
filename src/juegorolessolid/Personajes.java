@@ -88,5 +88,5 @@ public abstract class Personajes {
     public void setObjetoEquipado(Objeto objetoEquipado) {
         this.objetoEquipado = objetoEquipado;
     }
-    
+
 }
