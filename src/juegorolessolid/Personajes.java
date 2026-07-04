@@ -8,35 +8,46 @@ public abstract class Personajes {
     protected String nombre;
     protected int vida, ataque;
     protected List<Objeto> inventario = new ArrayList<>();
-    protected Arma armaEquipada;
-    protected Armadura armaduraEquipada;
- 
+    protected Objeto objetoEquipado;
+
     public Personajes(String nombre, int vida, int ataque) {
         this.nombre = nombre;
         this.vida = vida;
         this.ataque = ataque;
     }
 
-    public void equiparArma(Arma a) {
-        this.armaEquipada = a;
+    public void agregarInventario(Objeto o) {
+        inventario.add(o);
     }
 
-    public void equiparArmadura(Armadura a) {
-        this.armaduraEquipada = a;
+    public void equipar(Objeto o) {
+        if (!inventario.contains(o)) {
+            inventario.add(o);
+        }
+        this.objetoEquipado = o;
+    }
+
+    public void desequipar() {
+        this.objetoEquipado = null;
     }
 
     public int getBonusAtaqueEquipado() {
-        return (armaEquipada != null) ? armaEquipada.getBonusAtaque() : 0;
+        if (objetoEquipado != null) {
+            return objetoEquipado.getBonusAtaque();
+        }
+        return 0;
     }
 
     public int getBonusDefensaEquipado() {
-        return (armaduraEquipada != null) ? armaduraEquipada.getBonusDefensa() : 0;
+        if (objetoEquipado != null) {
+            return objetoEquipado.getBonusDefensa();
+        }
+        return 0;
     }
 
     public abstract int atacar();
 
     public abstract int defender();
-    
 
     public void recibirDanio(int danio) {
         this.vida -= danio;
@@ -70,21 +81,12 @@ public abstract class Personajes {
         this.inventario = inventario;
     }
 
-    public Arma getArmaEquipada() {
-        return armaEquipada;
+    public Objeto getObjetoEquipado() {
+        return objetoEquipado;
     }
 
-    public void setArmaEquipada(Arma armaEquipada) {
-        this.armaEquipada = armaEquipada;
-    }
-
-    public Armadura getArmaduraEquipada() {
-        return armaduraEquipada;
-    }
-
-    public void setArmaduraEquipada(Armadura armaduraEquipada) {
-        this.armaduraEquipada = armaduraEquipada;
+    public void setObjetoEquipado(Objeto objetoEquipado) {
+        this.objetoEquipado = objetoEquipado;
     }
     
-
 }
