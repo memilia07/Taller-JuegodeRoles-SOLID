@@ -21,3 +21,5 @@ public class Congelado extends EstadoAlterado {
         return "Congelado";
     }
 }
+
+
