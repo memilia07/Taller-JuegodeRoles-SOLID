@@ -9,7 +9,7 @@ public class Arqueros extends Personajes {
     private int cantidadFlechas, precision;
 
     public Arqueros(String nombre, int vida, int ataque, int cantidadFlechas, int precision) {
-        super(nombre, vida, ataque);
+        super(nombre, vida, ataque, 80); 
         this.cantidadFlechas = cantidadFlechas;
         this.precision = precision;
     }
